@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume maker| Home</title>
+    <style>
+        body {
+            background-color: #fde3c1;
+        }
+
+        .row-body {
+            text-align: center;
+        }
+
+        .row-item {
+            /* background-color: rgb(207, 166, 245); */
+            margin: 18px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row {
+            width: 60%;
+            margin: 10px auto;
+            background-color: white;
+            padding: 15px;
+        }
+
+        .col2 {
+            width: 130px;
+        }
+
+        .col2 p {
+            margin: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="row-body">
+        <h1>Enter your information</h1>
+    </div>
+    <form action="/create/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- ........................Personal Details Section......................... -->
+        <div class="row">
+            <h3>Personal Details :</h3>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Full Name</p>
+                </div>
+                <input type="text" name="Name" placeholder="Enter your Name">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Select Image</p>
+                </div>
+                <input type="file" name="images">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Designation.</p>
+                </div>
+                <input type="text" name="Designation" placeholder="leave if you are Fresher">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Career Objective</p>
+                </div>
+                <textarea rows="3" cols="40" name="CareerObjective"></textarea>
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Mobile No.</p>
+                </div>
+                <input type="tel" name="phone" placeholder="9999999999">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Alternate Mob. No.</p>
+                </div>
+                <input type="tel" name="Altphone" placeholder="9999999999">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Email Address.</p>
+                </div>
+                <input type="email" name="email" placeholder="abc@xyz.com">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Address</p>
+                </div>
+                <input type="text" name="Address">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Dist</p>
+                </div>
+                <input type="text" name="Dist">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>pin code</p>
+                </div>
+                <input type="number" name="pincode">
+            </div>
+
+        </div>
+        
+        <!-- ........................Skills Section......................... -->
+        <div class="row">
+            <h3>Skills :</h3>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Enter your Skills</p>
+                </div>
+                <input type="text" name="skill" placeholder="MS-Office word HTML">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <!-- <p>Enter your Skills</p> -->
+                </div>
+                <input type="text" name="skillFive" placeholder="MS-Office word HTML">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <!-- <p>Enter your Skills</p> -->
+                </div>
+                <input type="text" name="skillSecond" placeholder="MS-Office word HTML">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <!-- <p>Enter your Skills</p> -->
+                </div>
+                <input type="text" name="skillThird" placeholder="MS-Office word HTML">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <!-- <p>Enter your Skills</p> -->
+                </div>
+                <input type="text" name="skillFour" placeholder="MS-Office word HTML">
+            </div>
+            
+        </div>
+        
+        <!-- ........................Degree Section......................... -->
+        <div class="row">
+            <h3>Education Details :</h3>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Degree</p>
+                </div>
+                <input type="text" name="Degree" placeholder="B.E, B.TECH, B.SC...">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Passing Year</p>
+                </div>
+                <input type="date" name="DegreePassingYear">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Branch of Study</p>
+                </div>
+                <input type="text" name="DegreeBranch" placeholder="IT, ENTC, Civil....">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>institude</p>
+                </div>
+                <input type="text" name="Degreeinstitude" placeholder="your college name ">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Percent/CGPA</p>
+                </div>
+                <select name="DegreeCGPA">
+                    <option value="%">percent</option>
+                    <option value="CGPA">CGPA</option>
+                </select>
+                <input type="number" name="Degreepercent">
+            </div>
+        </div>
+
+        <!-- ........................HSC/Diploma Section......................... -->
+        <div class="row">
+            <div class="row-item">
+                <div class="col2">
+                    <p>HSC/Diploma</p>
+                </div>
+                <select name="HSC">
+                    <option value="HSC">HSC</option>
+                    <option value="Diploma">Diploma</option>
+                </select>
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Passing Year</p>
+                </div>
+                <input type="date" name="HSCPassingYear">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Branch of Study</p>
+                </div>
+                <input type="text" name="HSCBranch" >
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>institude</p>
+                </div>
+                <input type="text" name="HSCinstitude" placeholder="your college name ">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Percent/CGPA</p>
+                </div>
+                <select name="HSCCGPA">
+                    <option value="%">percent</option>
+                    <option value="CGPA">CGPA</option>
+                </select>
+                <input type="number" name="HSCpercent">
+            </div>
+        </div>
+
+        <!-- ........................SCC Section......................... -->
+        <div class="row">
+            <div class="row-item">
+                <div class="col2">
+                    <p>SCC</p>
+                </div>
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Passing Year</p>
+                </div>
+                <input type="date" name="SCCYear">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>institude</p>
+                </div>
+                <input type="text" name="SCCinstitude" placeholder="your School name ">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Percent/CGPA</p>
+                </div>
+                <select name="SSCPercent">
+                    <option value="%">percent</option>
+                    <option value="CGPA">CGPA</option>
+                </select>
+                <input type="number" name="SCCpercent">
+            </div>
+        </div>
+        
+        <!-- ........................Certificates Section......................... -->
+        <div class="row">
+            <h3>Certificates :</h3>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Certificate Name</p>
+                </div>
+                <input type="text" name="CertificateName">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Cource Name</p>
+                </div>
+                <input type="text" name="CourceName">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Completion Date</p>
+                </div>
+                <input type="date" name="CourceDate">
+            </div>
+        </div>
+
+        <!-- ........................Experiance Section......................... -->
+        <div class="row">
+            <h3>Experiance :</h3>
+            <p><strong> leave this Section if you are Fresher</strong></p>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Company Name :</p>
+                </div>
+                <input type="text" name="CompanyName">
+            </div>
+            
+            <div class="row-item">
+                <div class="col2">
+                    <p>Designation</p>
+                </div>
+                <input type="text" name="JobDesignation" placeholder="Ex. Sr. Engineer ">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Job Description</p>
+                </div>
+                <input type="text" name="JobDescription">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Starting Date:</p>
+                </div>
+                <input type="date" name="JobStart">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Leave Date:</p>
+                </div>
+                <select name="Present">
+                    <option value="Present">Present</option>
+                    <option value="">Enddate</option>
+                </select>
+                <input type="date" name="JobEnd">
+                
+            </div>
+        </div>
+
+        <!-- ........................Projects Section......................... -->
+        <div class="row">
+            <h3>Projects :</h3>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Project title</p>
+                </div>
+                <input type="text" name="ProjectTitle">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Project Description</p>
+                </div>
+                <input type="text" name="ProjectName">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Completion Date</p>
+                </div>
+                <input type="date" name="ProjectDate">
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                    <p>Project Stutus</p>
+                </div>
+                <select name="ProjectStatus">
+                    <option value="Complete" >Complete</option>
+                    <option value="Running" >Running</option>
+                </select>
+            </div>
+            <div class="row-item">
+                <div class="col2">
+                </div>
+                <input type="submit" value="Create Resume">
+            </div>
+        </div>
+        
+
+        
+    
+    </form>
+</body>
+</html>
+</body>
+</html>

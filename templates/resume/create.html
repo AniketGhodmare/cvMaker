@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{%static 'css/create.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <section class="left-section">
+            <div class="left-content">
+                <div class="profile">
+                    <div class="image">
+                        <img src="{{Data.image.url}}" alt="">
+                    </div>
+                    <h2 class="name">{{Data.Name}}</h2>
+                    <p class="career">{{Data.Designation}}</p>
+                </div>
+                <div class="contact-info">
+                    <p class="main-title">Contact Info</p>
+                    <ul>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            {{Data.phone}}
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            {{Data.Altphone}}
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            {{Data.email}}
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            {{Data.Address}}
+                        </li>
+                        <li>
+                            <!-- <i class="fa fa-map-marker"></i> -->
+                            Dist : {{Data.Dist}} 
+                        </li>
+                        <li>
+                            <!-- <i class="fa fa-map-marker"></i> -->
+                             Zip/Pin : {{Data.pincode}} 
+                        </li>
+                    </ul>
+                </div>
+                <div class="skills-section">
+                    <p class="main-title">Skills</p>
+                    <ul>
+                        {% if Data.skill|length > 0 %}
+                        <li>
+                            <p class="skill-title">{{Data.skill}}</p>
+                        </li>
+                        {% endif %}
+                        {% if Data.skillSecond|length > 0 %}
+                        <li>
+                            <p class="skill-title">{{Data.skillSecond}}</p>
+                        </li>
+                        {% endif %}
+                        {% if Data.skillThird|length > 0 %}
+                        <li>
+                            <p class="skill-title">{{Data.skillThird}}</p>
+                        </li>
+                        {% endif %}
+                        {% if Data.skillFour|length > 0 %}
+                        <li>
+                            <p class="skill-title">{{Data.skillFour}}</p>
+                        </li>
+                        {% endif %}
+                        {% if Data.skillFive|length > 0 %}
+                        <li>
+                            <p class="skill-title">{{Data.skillFive}}</p>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+        <section class="right-section">
+            <div class="right-main-content">
+                <!-- ..................................about Section............................ -->
+                <section class="about sect">
+                    <h2 class="right-title">Career Objective</h2>
+                    <p class="para">
+                        {{Data.CareerObjective}}  
+                    </p>
+                </section>
+
+                <!-- ..................................Experiance Section............................ -->
+                {% if Data.CompanyName|length > 0 %}
+                <section class="sect">
+                    <h2 class="right-title">Experiance</h2>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">{{Data.CompanyName}}</h5>
+                            <p class="para">{{Data.JobStart}} - {{Data.JobSend}}{{Data.Present}} </p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">{{Data.JobDesignation}}</h5>
+                                <p class="para">
+                                    {{Data.JobDescription}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                {% endif %}
+
+                <!-- ..................................Education Section............................ -->
+                <section class="sect">
+                    <h2 class="right-title">Education</h2>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">{{Data.Degree}}</h5>
+                            <p class="para">{{Data.DegreePassingYear}}</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">{{Data.DegreeBranch}}</h5>
+                                <p class="para">
+                                    Complete degree from {{Data.Degreeinstitude}}
+                                    in {{Data.DegreePassingYear}} with {{Data.Degreepercent}} CGPA
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">{{Data.HSC}}</h5>
+                            <p class="para">{{Data.HSCPassingYear}}</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">{{Data.HSCBranch}}</h5>
+                                <p class="para">
+                                    Complete {{Data.HSC}} from {{Data.HSCinstitude}}
+                                    in {{Data.HSCPassingYear}} with {{Data.HSCpercent}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">S.S.C</h5>
+                            <p class="para">{{Data.SCCYear}}</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">S.S.C</h5>
+                                <p class="para">
+                                    Complete S.S.C from {{Data.SCCinstitude}}, with {{Data.SCCpercent}} %
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ..................................Certificate Section............................ -->
+                {% if Data.CertificateName|length > 0 %}
+                <section class="sect">
+                    <h2 class="right-title">Certificate</h2>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">{{Data.CertificateName}}</h5>
+                            <p class="para">{{Data.CourceDate}}</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">{{Data.CourceName}}</h5>
+                                <p class="para">
+                                    successfully Complete '{{Data.CourceName}}' in
+                                    {{Data.CourceDate}}.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                {% endif %}
+                <!-- ..................................Projects Section............................ -->
+                {% if Data.ProjectTitle|length > 0 %}
+                <section class="sect">
+                    <h2 class="right-title">Projects</h2>
+                    <div class="timeline">
+                        <div class="left-tl-content">
+                            <h5 class="tl-title">{{Data.ProjectTitle}}</h5>
+                            <p class="para">{{Data.ProjectDate}}</p>
+                        </div>
+                        <div class="right-tl-content">
+                            <div class="tl-content">
+                                <h5 class="tl-title-2">{{Data.ProjectStatus}}</h5>
+                                <p class="para">
+                                    {{Data.ProjectName}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
